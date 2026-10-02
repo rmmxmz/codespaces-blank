@@ -1,40 +1,61 @@
 //Import react
 import React from 'react'
 
-//Import Images
-import logo from './assets/Abstraction.png'
+//Import images
+import logo from './assets/abstraction.png'
 import weblogo from './assets/weblogo.png'
-//CSS Import/Link
+import google from './assets/google.png'
+import facebook from './assets/facebook.png'
+import lock from './assets/lock.png'
 
+//CSS Import/Link
 import './App.css';
 
-{/*Declaring the app function*/}
+//Declaring the app function
 const App = () => {
-  {/*HTML to be returned*/}
+  //HTML to be returned
   return (
     <div className='page'>
-      <div className='left'> 
-        {/*logo, text and images*/}
-        <img src={weblogo} alt='logo' width='135px' height='117'px></img>
-        <h3> Getting Started With VR Creation</h3>
-        <img src={logo} alt='logo' width='630.49px' height ='673.97px'></img>
+      {/*Left side of the screen*/}
+      <div className='left'>
+        <img src={weblogo} alt='logo' width='135px' height='117px'></img>
+        <h3>Getting Started With VR Creation</h3>
+        <img src={logo} alt='logo' width='630.49px' height='673.97px' className='imgOffset'></img>
       </div>
 
-      {/*Right side of screen*/}
-      <div className='right'>  
-        {/*Language Select*/}
+      {/*Right side of the screen*/}
+      <div className='right'>
+    
         <select name="language" id="lang">
-           <option value = "English"> English (UK)  </option>
+          <option value="En">English (UK)</option>
         </select>
-
-        {/*Actual form from the right side of the screen*/}
-        {/*Starting from "Create Account"*/}
-        <form>
-
-        </form>
       </div>
+
+        <form>
+          <h2>Create Account</h2>
+          <div className='buttonRow'>
+            <button><img src={google} width='23px' height='27px'></img>Signup with Google</button>
+            <button><img src={facebook} width='24px' height='24px'></img>Signup with Facebook</button>
+          </div>
+          <p className='or'>- OR -</p>
+          <div className='inputs'>
+            <input placeholder=' Full Name' type='text' required></input>
+            
+            
+            <input placeholder='Email' type='email' required></input>
+          
+          <div>
+            <input placeholder='Password' type='password' required></input>
+            <img src={lock} width='24px' height='24px'></img>
+          </div>
+
+          </div>
+
+          <button className='Create'> Create Account</button>
+          <p> Already have an account? <a> Log In</a></p>
+        </form>
     </div>
   )
 }
 
-export default App
+export default App;
